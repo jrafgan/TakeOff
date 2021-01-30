@@ -8,8 +8,10 @@ import Button from "@material-ui/core/Button";
 const useStyles = theme => ({
     root: {
         '& .MuiTextField-root': {
-            margin: theme.spacing(1),
+            marginTop: theme.spacing(1),
             width: 200,
+            display: 'block',
+            margin: 'auto'
         },
     },
 });
@@ -38,14 +40,12 @@ class Login extends Component {
         return (
             <form className={classes.root} id="submit" noValidate autoComplete="off" onSubmit={this.submitFormHandler}>
                 <h2 style={{textAlign: 'center', marginBottom: '20px'}}>Login to backoffice</h2>
-                <h4 style={{textAlign: 'center', marginBottom: '20px'}}>If you don't have account please
-                    register</h4>
+
                 <TextField
                     name="username"
                     error={this.props.error}
                     id="outlined-error-helper-text"
                     label="Username"
-                    defaultValue="Enter username"
                     helperText={this.props.error}
                     variant="outlined"
                     onChange={this.inputChangeHandler}
@@ -53,14 +53,14 @@ class Login extends Component {
                 <TextField
                     name="password"
                     error={this.props.error}
-                    id="outlined-error-helper-text"
+                    id="outlined-error-helper"
                     label="Password"
-                    defaultValue="Enter password"
                     helperText={this.props.error}
                     variant="outlined"
                     onChange={this.inputChangeHandler}
+                    type='password'
                 />
-                <Button  type="submit" form="submit">Click me</Button>
+                <Button type="submit" form="submit" style={{marginTop: '20px'}}>LOGIN</Button>
 
             </form>
         );
